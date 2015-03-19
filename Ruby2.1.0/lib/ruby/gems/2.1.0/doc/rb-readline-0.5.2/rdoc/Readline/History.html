@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Readline::History - Rb-Readline - Documentation</title>
+
+<link href="../fonts.css" rel="stylesheet">
+<link href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/navigation.js"></script>
+<script src="../js/search_index.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/searcher.js"></script>
+<script src="../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Object
+  
+</div>
+
+    
+    <div id="extends-section" class="nav-section">
+  <h3>Extended With Modules</h3>
+
+  <ul class="link-list">
+    
+  
+    <li><span class="extend">Enumerable</span>
+  
+  
+  </ul>
+</div>
+
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-3C-3C">::&lt;&lt;</a>
+    
+    <li ><a href="#method-c-5B-5D">::[]</a>
+    
+    <li ><a href="#method-c-5B-5D-3D">::[]=</a>
+    
+    <li ><a href="#method-c-delete_at">::delete_at</a>
+    
+    <li ><a href="#method-c-each">::each</a>
+    
+    <li ><a href="#method-c-empty-3F">::empty?</a>
+    
+    <li ><a href="#method-c-length">::length</a>
+    
+    <li ><a href="#method-c-pop">::pop</a>
+    
+    <li ><a href="#method-c-push">::push</a>
+    
+    <li ><a href="#method-c-rb_remove_history">::rb_remove_history</a>
+    
+    <li ><a href="#method-c-shift">::shift</a>
+    
+    <li ><a href="#method-c-size">::size</a>
+    
+    <li ><a href="#method-c-to_s">::to_s</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Readline::History">
+  <h1 id="class-Readline::History" class="class">
+    class Readline::History
+  </h1>
+
+  <section class="description">
+    
+<p>The <a href="History.html">History</a> class encapsulates a history of all
+commands entered by users at the prompt, providing an interface for
+inspection and retrieval of all commands.</p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="private-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-3C-3C" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">&lt;&lt;</span><span
+            class="method-args">(str)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Synonym for <a
+href="../RbReadline.html#method-i-add_history">RbReadline#add_history</a>.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="3C-3C-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 366</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-operator">&lt;&lt;</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">add_history</span>(<span class="ruby-identifier">str</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-5B-5D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]</span><span
+            class="method-args">(index)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the command that was entered at the specified <code>index</code> in
+the history buffer.</p>
+
+<p>Raises an IndexError if the entry is nil.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="5B-5D-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 337</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-operator">[]</span>(<span class="ruby-identifier">index</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">index</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span>
+    <span class="ruby-identifier">index</span> <span class="ruby-operator">+=</span> <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">history_length</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">entry</span> = <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">history_get</span>(<span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">history_base</span><span class="ruby-operator">+</span><span class="ruby-identifier">index</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">entry</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">IndexError</span>,<span class="ruby-string">&quot;invalid index&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">entry</span>.<span class="ruby-identifier">line</span>.<span class="ruby-identifier">dup</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-5B-5D-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]=</span><span
+            class="method-args">(index,str)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets the command <code>str</code> at the given index in the history buffer.</p>
+
+<p>You can only replace an existing entry. Attempting to create a new entry
+will result in an IndexError.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="5B-5D-3D-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 353</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-operator">[]=</span>(<span class="ruby-identifier">index</span>,<span class="ruby-identifier">str</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">index</span><span class="ruby-operator">&lt;</span><span class="ruby-value">0</span>
+    <span class="ruby-identifier">index</span> <span class="ruby-operator">+=</span> <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">history_length</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">entry</span> = <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">replace_history_entry</span>(<span class="ruby-identifier">index</span>,<span class="ruby-identifier">str</span>,<span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">entry</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">IndexError</span>,<span class="ruby-string">&quot;invalid index&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">str</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-delete_at" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete_at</span><span
+            class="method-args">(index)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Deletes an entry from the histoyr buffer at the specified
+<code>index</code>.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="delete_at-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 445</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">delete_at</span>(<span class="ruby-identifier">index</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">index</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span>
+    <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">history_length</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">index</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">index</span> <span class="ruby-operator">&gt;</span> <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">history_length</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">IndexError</span>, <span class="ruby-string">&quot;invalid index&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">rb_remove_history</span>(<span class="ruby-identifier">index</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-each" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each</span><span
+            class="method-args">() { |line.dup| ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Iterates over each entry in the history buffer.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="each-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 415</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">each</span>()
+  <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span> <span class="ruby-operator">...</span> <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">history_length</span>
+    <span class="ruby-identifier">entry</span> = <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">history_get</span>(<span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">history_base</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">i</span>)
+    <span class="ruby-keyword">break</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">entry</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">entry</span>.<span class="ruby-identifier">line</span>.<span class="ruby-identifier">dup</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-empty-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">empty?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a bolean value indicating whether or not the history buffer is
+empty.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="empty-3F-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 439</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">empty?</span>()
+  <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">history_length</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-length" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">length</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the length of the history buffer.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="length-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 426</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">length</span>()
+  <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">history_length</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-pop" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pop</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Removes and returns the last element from the history buffer.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="pop-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 395</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">pop</span>()
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">history_length</span><span class="ruby-operator">&gt;</span><span class="ruby-value">0</span>
+    <span class="ruby-identifier">rb_remove_history</span>(<span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">history_length</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-push" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">push</span><span
+            class="method-args">(*args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Pushes a list of <code>args</code> onto the history buffer.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="push-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 372</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">push</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">args</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">str</span><span class="ruby-operator">|</span>
+    <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">add_history</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-rb_remove_history" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rb_remove_history</span><span
+            class="method-args">(index)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Internal function that removes the item at <code>index</code> from the
+history buffer, performing necessary duplication in the process.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="rb_remove_history-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 383</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">rb_remove_history</span>(<span class="ruby-identifier">index</span>)
+  <span class="ruby-identifier">entry</span> = <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">remove_history</span>(<span class="ruby-identifier">index</span>)
+  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">entry</span>)
+    <span class="ruby-identifier">val</span> = <span class="ruby-identifier">entry</span>.<span class="ruby-identifier">line</span>.<span class="ruby-identifier">dup</span>
+    <span class="ruby-identifier">entry</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">val</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-shift" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">shift</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Removes and returns the first element from the history buffer.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="shift-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 405</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">shift</span>()
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">history_length</span><span class="ruby-operator">&gt;</span><span class="ruby-value">0</span>
+    <span class="ruby-identifier">rb_remove_history</span>(<span class="ruby-value">0</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-size" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">size</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Synonym for Readline.length.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="size-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 432</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">size</span>()
+  <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">history_length</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The <a href="History.html">History</a> class, stringified in all caps.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 328</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-string">&quot;HISTORY&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

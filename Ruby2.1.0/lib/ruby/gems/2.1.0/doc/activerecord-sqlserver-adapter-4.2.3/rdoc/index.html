@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>activerecord-sqlserver-adapter-4.2.3 Documentation</title>
+
+<link href="./fonts.css" rel="stylesheet">
+<link href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/navigation.js"></script>
+<script src="./js/search_index.js"></script>
+<script src="./js/search.js"></script>
+<script src="./js/searcher.js"></script>
+<script src="./js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <div id="classindex-section" class="nav-section">
+  <h3>Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./ActiveRecord/Base.html">ActiveRecord::Base</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/CoreExt/ActiveRecord.html">ActiveRecord::ConnectionAdapters::SQLServer::CoreExt::ActiveRecord</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/CoreExt/ActiveRecord/ClassMethods.html">ActiveRecord::ConnectionAdapters::SQLServer::CoreExt::ActiveRecord::ClassMethods</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/CoreExt/AttributeMethods.html">ActiveRecord::ConnectionAdapters::SQLServer::CoreExt::AttributeMethods</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/CoreExt/Explain.html">ActiveRecord::ConnectionAdapters::SQLServer::CoreExt::Explain</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/CoreExt/ODBC/Database.html">ActiveRecord::ConnectionAdapters::SQLServer::CoreExt::ODBC::Database</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/CoreExt/ODBC/Statement.html">ActiveRecord::ConnectionAdapters::SQLServer::CoreExt::ODBC::Statement</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/DatabaseLimits.html">ActiveRecord::ConnectionAdapters::SQLServer::DatabaseLimits</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/DatabaseStatements.html">ActiveRecord::ConnectionAdapters::SQLServer::DatabaseStatements</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/DatabaseTasks.html">ActiveRecord::ConnectionAdapters::SQLServer::DatabaseTasks</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Quoting.html">ActiveRecord::ConnectionAdapters::SQLServer::Quoting</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/SchemaCache.html">ActiveRecord::ConnectionAdapters::SQLServer::SchemaCache</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/SchemaCreation.html">ActiveRecord::ConnectionAdapters::SQLServer::SchemaCreation</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/SchemaStatements.html">ActiveRecord::ConnectionAdapters::SQLServer::SchemaStatements</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Showplan.html">ActiveRecord::ConnectionAdapters::SQLServer::Showplan</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Showplan/PrinterTable.html">ActiveRecord::ConnectionAdapters::SQLServer::Showplan::PrinterTable</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Showplan/PrinterXml.html">ActiveRecord::ConnectionAdapters::SQLServer::Showplan::PrinterXml</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/TableDefinition.html">ActiveRecord::ConnectionAdapters::SQLServer::TableDefinition</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Type/BigInteger.html">ActiveRecord::ConnectionAdapters::SQLServer::Type::BigInteger</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Type/Binary.html">ActiveRecord::ConnectionAdapters::SQLServer::Type::Binary</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Type/Boolean.html">ActiveRecord::ConnectionAdapters::SQLServer::Type::Boolean</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Type/Castable.html">ActiveRecord::ConnectionAdapters::SQLServer::Type::Castable</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Type/Char.html">ActiveRecord::ConnectionAdapters::SQLServer::Type::Char</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Type/Date.html">ActiveRecord::ConnectionAdapters::SQLServer::Type::Date</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Type/DateTime.html">ActiveRecord::ConnectionAdapters::SQLServer::Type::DateTime</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Type/Decimal.html">ActiveRecord::ConnectionAdapters::SQLServer::Type::Decimal</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Type/Float.html">ActiveRecord::ConnectionAdapters::SQLServer::Type::Float</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Type/Integer.html">ActiveRecord::ConnectionAdapters::SQLServer::Type::Integer</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Type/Money.html">ActiveRecord::ConnectionAdapters::SQLServer::Type::Money</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Type/Quoter.html">ActiveRecord::ConnectionAdapters::SQLServer::Type::Quoter</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Type/Real.html">ActiveRecord::ConnectionAdapters::SQLServer::Type::Real</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Type/SmallDateTime.html">ActiveRecord::ConnectionAdapters::SQLServer::Type::SmallDateTime</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Type/SmallInteger.html">ActiveRecord::ConnectionAdapters::SQLServer::Type::SmallInteger</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Type/SmallMoney.html">ActiveRecord::ConnectionAdapters::SQLServer::Type::SmallMoney</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Type/String.html">ActiveRecord::ConnectionAdapters::SQLServer::Type::String</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Type/Text.html">ActiveRecord::ConnectionAdapters::SQLServer::Type::Text</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Type/Time.html">ActiveRecord::ConnectionAdapters::SQLServer::Type::Time</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Type/Timestamp.html">ActiveRecord::ConnectionAdapters::SQLServer::Type::Timestamp</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Type/TinyInteger.html">ActiveRecord::ConnectionAdapters::SQLServer::Type::TinyInteger</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Type/UnicodeChar.html">ActiveRecord::ConnectionAdapters::SQLServer::Type::UnicodeChar</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Type/UnicodeString.html">ActiveRecord::ConnectionAdapters::SQLServer::Type::UnicodeString</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Type/UnicodeText.html">ActiveRecord::ConnectionAdapters::SQLServer::Type::UnicodeText</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Type/UnicodeVarchar.html">ActiveRecord::ConnectionAdapters::SQLServer::Type::UnicodeVarchar</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Type/UnicodeVarcharMax.html">ActiveRecord::ConnectionAdapters::SQLServer::Type::UnicodeVarcharMax</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Type/Uuid.html">ActiveRecord::ConnectionAdapters::SQLServer::Type::Uuid</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Type/Varbinary.html">ActiveRecord::ConnectionAdapters::SQLServer::Type::Varbinary</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Type/VarbinaryMax.html">ActiveRecord::ConnectionAdapters::SQLServer::Type::VarbinaryMax</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Type/Varchar.html">ActiveRecord::ConnectionAdapters::SQLServer::Type::Varchar</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Type/VarcharMax.html">ActiveRecord::ConnectionAdapters::SQLServer::Type::VarcharMax</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Utils.html">ActiveRecord::ConnectionAdapters::SQLServer::Utils</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Utils/Name.html">ActiveRecord::ConnectionAdapters::SQLServer::Utils::Name</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServer/Version.html">ActiveRecord::ConnectionAdapters::SQLServer::Version</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServerAdapter.html">ActiveRecord::ConnectionAdapters::SQLServerAdapter</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServerColumn.html">ActiveRecord::ConnectionAdapters::SQLServerColumn</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServerRealTransaction.html">ActiveRecord::ConnectionAdapters::SQLServerRealTransaction</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLServerTransaction.html">ActiveRecord::ConnectionAdapters::SQLServerTransaction</a>
+  
+    <li><a href="./ActiveRecord/DeadlockVictim.html">ActiveRecord::DeadlockVictim</a>
+  
+    <li><a href="./ActiveRecord/ExplainSubscriber.html">ActiveRecord::ExplainSubscriber</a>
+  
+    <li><a href="./ActiveRecord/Tasks.html">ActiveRecord::Tasks</a>
+  
+    <li><a href="./ActiveRecord/Tasks/DatabaseTasksSQLServer.html">ActiveRecord::Tasks::DatabaseTasksSQLServer</a>
+  
+    <li><a href="./ActiveRecord/Tasks/DatabaseTasksSQLServer/ClassMethods.html">ActiveRecord::Tasks::DatabaseTasksSQLServer::ClassMethods</a>
+  
+    <li><a href="./ActiveRecord/Tasks/SQLServerDatabaseTasks.html">ActiveRecord::Tasks::SQLServerDatabaseTasks</a>
+  
+    <li><a href="./ActiveRecord/Type.html">ActiveRecord::Type</a>
+  
+    <li><a href="./ActiveRecord/Type/Value.html">ActiveRecord::Type::Value</a>
+  
+    <li><a href="./ActiveRecord/Type/Value/SQLServerBehavior.html">ActiveRecord::Type::Value::SQLServerBehavior</a>
+  
+    <li><a href="./ActiveRecord/Type/Value/SQLServerBehavior/ClassMethods.html">ActiveRecord::Type::Value::SQLServerBehavior::ClassMethods</a>
+  
+    <li><a href="./Arel/Visitors/SQLServer.html">Arel::Visitors::SQLServer</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main">
+<p>This is the API documentation for activerecord-sqlserver-adapter-4.2.3 Documentation.
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

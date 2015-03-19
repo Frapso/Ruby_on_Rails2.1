@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>README - Rb-Readline - Documentation</title>
+
+<link href="./fonts.css" rel="stylesheet">
+<link href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/navigation.js"></script>
+<script src="./js/search_index.js"></script>
+<script src="./js/search.js"></script>
+<script src="./js/searcher.js"></script>
+<script src="./js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-Description">Description</a>
+    <li><a href="#label-Synopsis">Synopsis</a>
+    <li><a href="#label-Compatibility">Compatibility</a>
+    <li><a href="#label-Motivation">Motivation</a>
+    <li><a href="#label-Tutorial">Tutorial</a>
+    <li><a href="#label-Alternatives">Alternatives</a>
+    <li><a href="#label-Authors">Authors</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./CHANGES.html">CHANGES</a>
+  
+    <li><a href="./LICENSE.html">LICENSE</a>
+  
+    <li><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page README.rdoc">
+
+<h1 id="label-Description">Description<span><a href="#label-Description">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<p>The readline library provides a pure Ruby implementation of the GNU
+readline C library, as well as the <a href="Readline.html">Readline</a>
+extension that ships as part of the standard library.</p>
+
+<h1 id="label-Synopsis">Synopsis<span><a href="#label-Synopsis">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;readline&#39;</span>
+
+<span class="ruby-identifier">loop</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">line</span> = <span class="ruby-constant">Readline</span><span class="ruby-operator">::</span><span class="ruby-identifier">readline</span>(<span class="ruby-string">&#39;&gt; &#39;</span>)
+  <span class="ruby-keyword">break</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;quit&#39;</span>
+  <span class="ruby-constant">Readline</span><span class="ruby-operator">::</span><span class="ruby-constant">HISTORY</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">line</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;You typed: #{line}&quot;</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<h1 id="label-Compatibility">Compatibility<span><a href="#label-Compatibility">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<p>rb-readline should work on all Unix-like systems and Windows. It is
+regularly used with MRI 1.8/1.9 and Rubinius. JRuby is not supported and
+there are no plans to support it in the future - it comes bundled with a
+Java implementation of <a href="Readline.html">Readline</a>.</p>
+
+<h1 id="label-Motivation">Motivation<span><a href="#label-Motivation">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<p>First, building the GNU readline library on MS Windows with Visual C++ is
+almost impossible. However, certain libraries depend on readline. By
+providing a pure Ruby version we eliminate the entire compiler
+compatibility issue.</p>
+
+<p>Second, even on distributions of Windows built with MinGW (that include the
+readline library for Windows), the behavior was sometimes erratic and would
+break.</p>
+
+<p>Third, even on certain Unix distributions the GNU readline library is not
+guaranteed to be installed. Providing a pure Ruby readline eliminates the
+need to install a C library first. It&#39;s also one less link in the
+dependency chain, meaning we don&#39;t need to worry about possible changes
+in the underlying C library affecting our interface.</p>
+
+<p>Fourth, by making the interface pure Ruby, we increase the likelihood of
+receiving patches, feature requests, documentation updates, etc from the
+community at large, since not everyone knows C.</p>
+
+<p>Lastly, the <a href="Readline.html">Readline</a> interface that ships as
+part of the standard library is weak, and only provides a very limited
+subset of the actual GNU readline library. By providing a pure Ruby
+implementation we allow 3rd party library authors to write their own
+interface as they see fit.</p>
+
+<h1 id="label-Tutorial">Tutorial<span><a href="#label-Tutorial">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<p>For an excellent tutorial on how to use <a
+href="Readline.html">Readline</a> in practice, please see Joseph
+Pecoraro&#39;s examples at <a
+href="http://bogojoker.com/readline">bogojoker.com/readline</a>/.</p>
+
+<p>You can also take a look at Ruby 1.9 stdlib <a
+href="Readline.html">Readline</a> documentation located at <a
+href="http://rubydoc.info/stdlib/readline/1.9.2/frames">rubydoc.info/stdlib/readline/1.9.2/frames</a></p>
+
+<h1 id="label-Alternatives">Alternatives<span><a href="#label-Alternatives">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<p>See Rawline for a library that began life in pure Ruby and provides an
+interface that&#39;s probably more comfortable to Ruby programmer. It has
+certain features that <a href="Readline.html">Readline</a> does not. In
+addition, it provides a <a href="Readline.html">Readline</a> compatibility
+mode.</p>
+
+<h1 id="label-Authors">Authors<span><a href="#label-Authors">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<ul><li>
+<p>Park Heesob (C translation, code donated as part of bounty)</p>
+</li><li>
+<p>Daniel Berger (Documentation and testing)</p>
+</li><li>
+<p>Luis Lavena</p>
+</li><li>
+<p>Mark Somerville (Maintainer)</p>
+</li><li>
+<p>Connor Atherton (Maintainer)</p>
+</li></ul>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

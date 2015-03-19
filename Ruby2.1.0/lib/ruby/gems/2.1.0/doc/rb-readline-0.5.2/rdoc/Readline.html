@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>module Readline - Rb-Readline - Documentation</title>
+
+<link href="./fonts.css" rel="stylesheet">
+<link href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/navigation.js"></script>
+<script src="./js/search_index.js"></script>
+<script src="./js/search.js"></script>
+<script src="./js/searcher.js"></script>
+<script src="./js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="RbReadline.html">RbReadline</a>
+  
+  
+  </ul>
+</div>
+
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-basic_quote_characters">::basic_quote_characters</a>
+    
+    <li ><a href="#method-c-basic_quote_characters-3D">::basic_quote_characters=</a>
+    
+    <li ><a href="#method-c-basic_word_break_characters">::basic_word_break_characters</a>
+    
+    <li ><a href="#method-c-basic_word_break_characters-3D">::basic_word_break_characters=</a>
+    
+    <li ><a href="#method-c-completer_quote_characters">::completer_quote_characters</a>
+    
+    <li ><a href="#method-c-completer_quote_characters-3D">::completer_quote_characters=</a>
+    
+    <li ><a href="#method-c-completer_word_break_characters">::completer_word_break_characters</a>
+    
+    <li ><a href="#method-c-completer_word_break_characters-3D">::completer_word_break_characters=</a>
+    
+    <li ><a href="#method-c-completion_append_character">::completion_append_character</a>
+    
+    <li ><a href="#method-c-completion_append_character-3D">::completion_append_character=</a>
+    
+    <li ><a href="#method-c-completion_case_fold">::completion_case_fold</a>
+    
+    <li ><a href="#method-c-completion_case_fold-3D">::completion_case_fold=</a>
+    
+    <li ><a href="#method-c-completion_proc">::completion_proc</a>
+    
+    <li ><a href="#method-c-completion_proc-3D">::completion_proc=</a>
+    
+    <li ><a href="#method-c-emacs_editing_mode">::emacs_editing_mode</a>
+    
+    <li ><a href="#method-c-filename_quote_characters">::filename_quote_characters</a>
+    
+    <li ><a href="#method-c-filename_quote_characters-3D">::filename_quote_characters=</a>
+    
+    <li ><a href="#method-c-input-3D">::input=</a>
+    
+    <li ><a href="#method-c-line_buffer">::line_buffer</a>
+    
+    <li ><a href="#method-c-output-3D">::output=</a>
+    
+    <li ><a href="#method-c-point">::point</a>
+    
+    <li ><a href="#method-c-readline">::readline</a>
+    
+    <li ><a href="#method-c-readline_attempted_completion_function">::readline_attempted_completion_function</a>
+    
+    <li ><a href="#method-c-vi_editing_mode">::vi_editing_mode</a>
+    
+    <li ><a href="#method-i-readline">#readline</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="module-Readline">
+  <h1 id="module-Readline" class="module">
+    module Readline
+  </h1>
+
+  <section class="description">
+    
+<p>readline.rb – GNU <a href="Readline.html">Readline</a> module Copyright (C)
+1997-2001  Shugo Maeda</p>
+
+<p>Ruby translation by Park Heesob phasis@gmail.com</p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+      
+        <dt id="FILENAME_COMPLETION_PROC">FILENAME_COMPLETION_PROC
+        
+        <dd><p>The <a href="Readline/Fcomp.html">Fcomp</a> class provided to encapsulate
+typical filename completion procedure. You will not typically use this
+directly, but will instead use the <a
+href="Readline/FILENAME_COMPLETION_PROC.html">Readline::FILENAME_COMPLETION_PROC</a>.</p>
+        
+      
+        <dt id="HISTORY">HISTORY
+        
+        <dd><p>The <a href="Readline/History.html">History</a> class encapsulates a
+history of all commands entered by users at the prompt, providing an
+interface for inspection and retrieval of all commands.</p>
+        
+      
+        <dt id="USERNAME_COMPLETION_PROC">USERNAME_COMPLETION_PROC
+        
+        <dd><p>The <a href="Readline/Ucomp.html">Ucomp</a> class provided to encapsulate
+typical filename completion procedure. You will not typically use this
+directly, but will instead use the <a
+href="Readline/USERNAME_COMPLETION_PROC.html">Readline::USERNAME_COMPLETION_PROC</a>.</p>
+
+<p>Note that this feature currently only works on Unix systems since it
+ultimately uses the Etc module to iterate over a list of users.</p>
+        
+      
+        <dt id="VERSION">VERSION
+        
+        <dd>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-basic_quote_characters" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">basic_quote_characters</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the list of quote characters that can cause a word break. The
+default is “&#39;&quot;” (single and double quote characters).</p>
+          
+          
+
+          
+          <div class="method-source-code" id="basic_quote_characters-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 268</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">basic_quote_characters</span>()
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_basic_quote_characters</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_basic_quote_characters</span>.<span class="ruby-identifier">dup</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-basic_quote_characters-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">basic_quote_characters=</span><span
+            class="method-args">(str)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets the list of quote characters that can cause a word break.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="basic_quote_characters-3D-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 261</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">basic_quote_characters=</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_basic_quote_characters</span> = <span class="ruby-identifier">str</span>.<span class="ruby-identifier">dup</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-basic_word_break_characters" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">basic_word_break_characters</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the character string that signal a break between words for the
+completion proc. The default is “ tn&quot;\&#39;`@$&gt;&lt;=|&amp;{(”.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="basic_word_break_characters-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 233</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">basic_word_break_characters</span>()
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_basic_word_break_characters</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_basic_word_break_characters</span>.<span class="ruby-identifier">dup</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-basic_word_break_characters-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">basic_word_break_characters=</span><span
+            class="method-args">(str)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets the character string that signal a break between words for the
+completion proc.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="basic_word_break_characters-3D-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 226</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">basic_word_break_characters=</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_basic_word_break_characters</span> = <span class="ruby-identifier">str</span>.<span class="ruby-identifier">dup</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-completer_quote_characters" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">completer_quote_characters</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the list of characters that can be used to quote a substring of the
+line, i.e. a group of characters inside quotes.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="completer_quote_characters-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 286</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">completer_quote_characters</span>()
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_completer_quote_characters</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_completer_quote_characters</span>.<span class="ruby-identifier">dup</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-completer_quote_characters-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">completer_quote_characters=</span><span
+            class="method-args">(str)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets the list of characters that can be used to quote a substring of the
+line, i.e. a group of characters within quotes.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="completer_quote_characters-3D-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 279</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">completer_quote_characters=</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_completer_quote_characters</span> = <span class="ruby-identifier">str</span>.<span class="ruby-identifier">dup</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-completer_word_break_characters" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">completer_word_break_characters</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the character string that signal the start or end of a word for the
+completion proc.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="completer_word_break_characters-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 251</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">completer_word_break_characters</span>()
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_completer_word_break_characters</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_completer_word_break_characters</span>.<span class="ruby-identifier">dup</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-completer_word_break_characters-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">completer_word_break_characters=</span><span
+            class="method-args">(str)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets the character string that signal the start or end of a word for the
+completion proc.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="completer_word_break_characters-3D-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 244</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">completer_word_break_characters=</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_completer_word_break_characters</span> = <span class="ruby-identifier">str</span>.<span class="ruby-identifier">dup</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-completion_append_character" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">completion_append_character</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the character that is automatically appended after the <a
+href="Readline.html#method-c-completion_proc">::completion_proc</a> method
+is called.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="completion_append_character-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 216</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">completion_append_character</span>()
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_completion_append_character</span> <span class="ruby-operator">==</span> <span class="ruby-value">?\</span><span class="ruby-value">0</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_completion_append_character</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-completion_append_character-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">completion_append_character=</span><span
+            class="method-args">(char)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets the character that is automatically appended after the <a
+href="Readline.html#method-c-completion_proc">::completion_proc</a> method
+is called.</p>
+
+<p>If <code>char</code> is nil or empty, then a null character is used.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="completion_append_character-3D-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 203</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">completion_append_character=</span>(<span class="ruby-identifier">char</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">char</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_completion_append_character</span> = <span class="ruby-value">?\</span><span class="ruby-value">0</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">char</span>.<span class="ruby-identifier">length</span><span class="ruby-operator">==</span><span class="ruby-value">0</span>
+    <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_completion_append_character</span> = <span class="ruby-value">?\</span><span class="ruby-value">0</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_completion_append_character</span> = <span class="ruby-identifier">char</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">chr</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-completion_case_fold" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">completion_case_fold</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns whether or not the completion proc is case sensitive. The default
+is false, i.e. completion procs are case sensitive.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="completion_case_fold-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 113</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">completion_case_fold</span>()
+  <span class="ruby-ivar">@completion_case_fold</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-completion_case_fold-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">completion_case_fold=</span><span
+            class="method-args">(bool)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets whether or not the completion proc should ignore case sensitivity. The
+default is false, i.e. completion procs are case sensitive.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="completion_case_fold-3D-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 106</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">completion_case_fold=</span>(<span class="ruby-identifier">bool</span>)
+  <span class="ruby-ivar">@completion_case_fold</span> = <span class="ruby-identifier">bool</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-completion_proc" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">completion_proc</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the current auto-completion procedure.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="completion_proc-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 99</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">completion_proc</span>()
+  <span class="ruby-ivar">@completion_proc</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-completion_proc-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">completion_proc=</span><span
+            class="method-args">(proc)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets the auto-completion procedure (i.e. tab auto-complete).</p>
+
+<p>The <code>proc</code> argument is typically a Proc object. It must respond
+to <code>.call</code>, take a single String argument and return an Array of
+candidates for completion.</p>
+
+<p>Example:</p>
+
+<pre class="ruby"><span class="ruby-identifier">list</span> = [<span class="ruby-string">&#39;search&#39;</span>, <span class="ruby-string">&#39;next&#39;</span>, <span class="ruby-string">&#39;clear&#39;</span>]
+<span class="ruby-constant">Readline</span>.<span class="ruby-identifier">completion_proc</span> = <span class="ruby-identifier">proc</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">list</span>.<span class="ruby-identifier">grep</span>( <span class="ruby-node">/^#{Regexp.escape(s)}/</span>) }
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="completion_proc-3D-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">completion_proc=</span>(<span class="ruby-identifier">proc</span>)
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">proc</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:call</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>,<span class="ruby-string">&quot;argument must respond to `call&#39;&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@completion_proc</span> = <span class="ruby-identifier">proc</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-emacs_editing_mode" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">emacs_editing_mode</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets emacs editing mode</p>
+          
+          
+
+          
+          <div class="method-source-code" id="emacs_editing_mode-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 193</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">emacs_editing_mode</span>()
+  <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_emacs_editing_mode</span>(<span class="ruby-value">1</span>,<span class="ruby-value">0</span>)
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-filename_quote_characters" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">filename_quote_characters</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the character string used to indicate quotes for the filename
+completion of user input.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="filename_quote_characters-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 304</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">filename_quote_characters</span>()
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_filename_quote_characters</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_filename_quote_characters</span>.<span class="ruby-identifier">dup</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-filename_quote_characters-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">filename_quote_characters=</span><span
+            class="method-args">(str)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets the character string of one or more characters that indicate quotes
+for the filename completion of user input.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="filename_quote_characters-3D-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 297</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">filename_quote_characters=</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_filename_quote_characters</span> = <span class="ruby-identifier">str</span>.<span class="ruby-identifier">dup</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-input-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">input=</span><span
+            class="method-args">(input)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets the input stream (an IO object) for readline interaction. The default
+is <code>$stdin</code>.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="input-3D-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">input=</span>(<span class="ruby-identifier">input</span>)
+  <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_instream</span> = <span class="ruby-identifier">input</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-line_buffer" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">line_buffer</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns current line buffer</p>
+          
+          
+
+          
+          <div class="method-source-code" id="line_buffer-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 75</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">line_buffer</span>
+  <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_line_buffer</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-output-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">output=</span><span
+            class="method-args">(output)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets the output stream (an IO object) for readline interaction. The default
+is <code>$stdout</code>.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="output-3D-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">output=</span>(<span class="ruby-identifier">output</span>)
+  <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_outstream</span> = <span class="ruby-identifier">output</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-point" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">point</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the current offset in the current input line.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="point-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 314</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">point</span>()
+  <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_point</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-readline" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">readline</span><span
+            class="method-args">(prompt = "", add_history = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Begins an interactive terminal process using <code>prompt</code> as the
+command prompt that users see when they type commands. The method returns
+the line entered whenever a carriage return is encountered.</p>
+
+<p>If an <code>add_history</code> argument is provided, commands entered by
+users are stored in a history buffer that can be recalled for later use.</p>
+
+<p>Note that this method depends on $stdin and $stdout both being open.
+Because this is meant as an interactive console interface, they should
+generally not be redirected.</p>
+
+<p>If you would like to add non-visible characters to the the prompt (for 
+example to add colors) you must prepend the character 001 (^A) before  each
+sequence of non-visible characters and add the character 002 (^B) after,
+otherwise line wrapping may not work properly.</p>
+
+<p>Example:</p>
+
+<pre>loop{ Readline.readline(&#39;&gt; &#39;) }</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="readline-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">readline</span>(<span class="ruby-identifier">prompt</span> = <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">add_history</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">$stdin</span>.<span class="ruby-identifier">closed?</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">IOError</span>, <span class="ruby-string">&quot;stdin closed&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_instream</span> = <span class="ruby-identifier">$stdin</span>
+  <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_outstream</span> = <span class="ruby-identifier">$stdout</span>
+
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">buff</span> = <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">readline</span>(<span class="ruby-identifier">prompt</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">buff</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_cleanup_after_signal</span>()
+    <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_deprep_terminal</span>()
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">add_history</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">buff</span>
+    <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">add_history</span>(<span class="ruby-identifier">buff</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">buff</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">buff</span>.<span class="ruby-identifier">dup</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-readline_attempted_completion_function" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">readline_attempted_completion_function</span><span
+            class="method-args">(text,start,_end)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns nil if no matches are found or an array of strings:</p>
+
+<pre>[0] is the replacement for text
+[1..n] the possible matches
+[n+1] nil</pre>
+
+<p>The possible matches should not include [0].</p>
+
+<p>If this method sets <a
+href="RbReadline.html#attribute-i-rl_attempted_completion_over">RbReadline#rl_attempted_completion_over</a>
+to true, then the default completion function will not be called when this
+function returns nil.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="readline_attempted_completion_function-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 128</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">readline_attempted_completion_function</span>(<span class="ruby-identifier">text</span>,<span class="ruby-identifier">start</span>,<span class="ruby-identifier">_end</span>)
+  <span class="ruby-identifier">proc</span> = <span class="ruby-ivar">@completion_proc</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">proc</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_attempted_completion_over</span> = <span class="ruby-keyword">true</span>
+
+  <span class="ruby-identifier">case_fold</span> = <span class="ruby-ivar">@completion_case_fold</span>
+  <span class="ruby-identifier">ary</span> = <span class="ruby-identifier">proc</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">text</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">ary</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">!=</span> <span class="ruby-constant">Array</span>
+    <span class="ruby-identifier">ary</span> = <span class="ruby-constant">Array</span>(<span class="ruby-identifier">ary</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">ary</span>.<span class="ruby-identifier">compact!</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">matches</span> = <span class="ruby-identifier">ary</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> (<span class="ruby-identifier">matches</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">matches</span><span class="ruby-operator">+</span><span class="ruby-value">2</span>)
+  <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span> <span class="ruby-operator">...</span> <span class="ruby-identifier">matches</span>
+    <span class="ruby-identifier">result</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>] = <span class="ruby-identifier">ary</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">dup</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">result</span>[<span class="ruby-identifier">matches</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>] = <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-keyword">if</span>(<span class="ruby-identifier">matches</span><span class="ruby-operator">==</span><span class="ruby-value">1</span>)
+    <span class="ruby-identifier">result</span>[<span class="ruby-value">0</span>] = <span class="ruby-identifier">result</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">dup</span>
+    <span class="ruby-identifier">result</span>[<span class="ruby-value">1</span>] = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">i</span> = <span class="ruby-value">1</span>
+    <span class="ruby-identifier">low</span> = <span class="ruby-value">100000</span>
+
+    <span class="ruby-keyword">while</span> (<span class="ruby-identifier">i</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">matches</span>)
+      <span class="ruby-keyword">if</span> (<span class="ruby-identifier">case_fold</span>)
+        <span class="ruby-identifier">si</span> = <span class="ruby-value">0</span>
+        <span class="ruby-keyword">while</span> ((<span class="ruby-identifier">c1</span> = <span class="ruby-identifier">result</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">si</span>,<span class="ruby-value">1</span>].<span class="ruby-identifier">downcase</span>) <span class="ruby-operator">&amp;&amp;</span>
+               (<span class="ruby-identifier">c2</span> = <span class="ruby-identifier">result</span>[<span class="ruby-identifier">i</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>][<span class="ruby-identifier">si</span>,<span class="ruby-value">1</span>].<span class="ruby-identifier">downcase</span>))
+          <span class="ruby-keyword">break</span> <span class="ruby-keyword">if</span> (<span class="ruby-identifier">c1</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">c2</span>)
+          <span class="ruby-identifier">si</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">si</span> = <span class="ruby-value">0</span>
+        <span class="ruby-keyword">while</span> ((<span class="ruby-identifier">c1</span> = <span class="ruby-identifier">result</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">si</span>,<span class="ruby-value">1</span>]) <span class="ruby-operator">&amp;&amp;</span>
+               (<span class="ruby-identifier">c2</span> = <span class="ruby-identifier">result</span>[<span class="ruby-identifier">i</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>][<span class="ruby-identifier">si</span>,<span class="ruby-value">1</span>]))
+          <span class="ruby-keyword">break</span> <span class="ruby-keyword">if</span> (<span class="ruby-identifier">c1</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">c2</span>)
+          <span class="ruby-identifier">si</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">if</span> (<span class="ruby-identifier">low</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">si</span>)
+        <span class="ruby-identifier">low</span> = <span class="ruby-identifier">si</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">i</span><span class="ruby-operator">+=</span><span class="ruby-value">1</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">result</span>[<span class="ruby-value">0</span>] = <span class="ruby-identifier">result</span>[<span class="ruby-value">1</span>][<span class="ruby-value">0</span>,<span class="ruby-identifier">low</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-vi_editing_mode" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">vi_editing_mode</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets vi editing mode.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="vi_editing_mode-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 186</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">vi_editing_mode</span>()
+  <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_vi_editing_mode</span>(<span class="ruby-value">1</span>,<span class="ruby-value">0</span>)
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-readline" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">readline</span><span
+            class="method-args">(prompt = "", add_history = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Begins an interactive terminal process using <code>prompt</code> as the
+command prompt that users see when they type commands. The method returns
+the line entered whenever a carriage return is encountered.</p>
+
+<p>If an <code>add_history</code> argument is provided, commands entered by
+users are stored in a history buffer that can be recalled for later use.</p>
+
+<p>Note that this method depends on $stdin and $stdout both being open.
+Because this is meant as an interactive console interface, they should
+generally not be redirected.</p>
+
+<p>If you would like to add non-visible characters to the the prompt (for 
+example to add colors) you must prepend the character 001 (^A) before  each
+sequence of non-visible characters and add the character 002 (^B) after,
+otherwise line wrapping may not work properly.</p>
+
+<p>Example:</p>
+
+<pre>loop{ Readline.readline(&#39;&gt; &#39;) }</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="readline-source">
+            <pre><span class="ruby-comment"># File lib/readline.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">readline</span>(<span class="ruby-identifier">prompt</span> = <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">add_history</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">$stdin</span>.<span class="ruby-identifier">closed?</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">IOError</span>, <span class="ruby-string">&quot;stdin closed&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_instream</span> = <span class="ruby-identifier">$stdin</span>
+  <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_outstream</span> = <span class="ruby-identifier">$stdout</span>
+
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">buff</span> = <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">readline</span>(<span class="ruby-identifier">prompt</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">buff</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_cleanup_after_signal</span>()
+    <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">rl_deprep_terminal</span>()
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">add_history</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">buff</span>
+    <span class="ruby-constant">RbReadline</span>.<span class="ruby-identifier">add_history</span>(<span class="ruby-identifier">buff</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">buff</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">buff</span>.<span class="ruby-identifier">dup</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

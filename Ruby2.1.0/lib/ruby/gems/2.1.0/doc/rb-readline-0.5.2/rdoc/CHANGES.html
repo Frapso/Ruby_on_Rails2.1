@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>CHANGES - Rb-Readline - Documentation</title>
+
+<link href="./fonts.css" rel="stylesheet">
+<link href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/navigation.js"></script>
+<script src="./js/search_index.js"></script>
+<script src="./js/search.js"></script>
+<script src="./js/searcher.js"></script>
+<script src="./js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-0.5.1+%2F+2014-01-08">0.5.1 / 2014-01-08</a>
+    <li><a href="#label-0.5.0+%2F+2013-04-28">0.5.0 / 2013-04-28</a>
+    <li><a href="#label-0.4.2+%2F+2011-11-01">0.4.2 / 2011-11-01</a>
+    <li><a href="#label-0.4.1+%2F+2011-07-29">0.4.1 / 2011-07-29</a>
+    <li><a href="#label-0.4.0+%2F+2011-01-10">0.4.0 / 2011-01-10</a>
+    <li><a href="#label-0.3.0+%2F+2010-12-27">0.3.0 / 2010-12-27</a>
+    <li><a href="#label-0.2.2+%2F+2010-10-19">0.2.2 / 2010-10-19</a>
+    <li><a href="#label-0.2.1+%2F+2010-08-22">0.2.1 / 2010-08-22</a>
+    <li><a href="#label-0.2.0">0.2.0</a>
+    <li><a href="#label-0.1.2+%2F+2009-05-18">0.1.2 / 2009-05-18</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./CHANGES.html">CHANGES</a>
+  
+    <li><a href="./LICENSE.html">LICENSE</a>
+  
+    <li><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page CHANGES">
+
+<h3 id="label-0.5.1+%2F+2014-01-08">0.5.1 / 2014-01-08<span><a href="#label-0.5.1+%2F+2014-01-08">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<ul><li>
+<p>Bugfixes:</p>
+<ul><li>
+<p>Fix double require issues. Fixes #93, #95 [yui-knk]</p>
+</li><li>
+<p>Use Fiddle to remove deprecation warning of DL. Fixes #90, #87 [Olipro]</p>
+</li></ul>
+</li><li>
+<p>Internal:</p>
+<ul><li>
+<p>Bundler-friendly repository (gemspec and Gemfile) to ease usage and
+development.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-0.5.0+%2F+2013-04-28">0.5.0 / 2013-04-28<span><a href="#label-0.5.0+%2F+2013-04-28">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<ul><li>
+<p>Enhancements:</p>
+<ul><li>
+<p>Port GNU Readline-5.2 (patches 003-010)</p>
+</li></ul>
+</li><li>
+<p>Bugfixes:</p>
+<ul><li>
+<p>Fix cursor position when scrolling through history</p>
+</li><li>
+<p>_rl_adjust_point: improve performance</p>
+</li><li>
+<p>Display issue scrolling past long lines. Fixes #69</p>
+</li><li>
+<p>Exception when scolling through long lines. Fixes #73</p>
+</li><li>
+<p>Correctly align directory name completion results</p>
+</li><li>
+<p>Disable Vi-mode. Fixes #51</p>
+</li><li>
+<p>Close the <a href="Readline.html">Readline</a> init file after use</p>
+</li><li>
+<p>Be explicit about source file encoding</p>
+</li><li>
+<p>Unload <a href="Readline.html">Readline</a> before loading rb-readline</p>
+</li><li>
+<p>Removed unused variable warnings under 1.9.3-dev</p>
+</li></ul>
+</li><li>
+<p>Internal:</p>
+<ul><li>
+<p>dos2unix all files</p>
+</li><li>
+<p><a href="README_rdoc.html">README</a> is RDoc</p>
+</li><li>
+<p>Consistently name test classes</p>
+</li><li>
+<p>Don&#39;t use String#each_char in the tests</p>
+</li><li>
+<p>Re-indented to the Ruby standard of two spaces</p>
+</li><li>
+<p>Previously released as 0.5.0.pre.1 (2013-02-24)</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-0.4.2+%2F+2011-11-01">0.4.2 / 2011-11-01<span><a href="#label-0.4.2+%2F+2011-11-01">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<ul><li>
+<p>Bugfixes:</p>
+<ul><li>
+<p>Use encoding for Ruby 1.9.x to solve non-ascii input. GH-58 [phasis68]</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-0.4.1+%2F+2011-07-29">0.4.1 / 2011-07-29<span><a href="#label-0.4.1+%2F+2011-07-29">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<ul><li>
+<p>Bugfixes:</p>
+<ul><li>
+<p>Fix crash with double tab and an empty line buffer. GH-26 [phasis68]</p>
+</li><li>
+<p>Accessing rl_line_buffer before initialization. GH-27 [phasis68]</p>
+</li><li>
+<p>Fix hanging bug when completer finds a quote char. [Spakman]</p>
+</li><li>
+<p>Filename completion on paths with directory components. GH-35 [Spakman]</p>
+</li><li>
+<p>Attempted completion function now returns correct array. GH-34 [Spakman]</p>
+</li><li>
+<p>Ensure @rl_filname_dequoting_function is used if defined. [Spakman]</p>
+</li><li>
+<p>Remove deprecations with recent versions of RubyGems. [luislavena]</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-0.4.0+%2F+2011-01-10">0.4.0 / 2011-01-10<span><a href="#label-0.4.0+%2F+2011-01-10">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<ul><li>
+<p>Enhancements:</p>
+<ul><li>
+<p>Provides convenience gem for 3rd parties.</p>
+</li><li>
+<p>Provides access to readline line_buffer (to support Bond).</p>
+</li><li>
+<p>Initial support for gemification of the library.</p>
+</li><li>
+<p>Reduce keyboard input delay to kill sluggishness.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-0.3.0+%2F+2010-12-27">0.3.0 / 2010-12-27<span><a href="#label-0.3.0+%2F+2010-12-27">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<ul><li>
+<p>Enhancements:</p>
+<ul><li>
+<p>Yield procesor to other threads on Windows. [jduck]</p>
+</li></ul>
+</li><li>
+<p>Bugfixes:</p>
+<ul><li>
+<p>Fix 1.8 and 1.9 code compatibility issues. [jduck]</p>
+</li><li>
+<p>Changes on Encoding detection. [jduck]</p>
+</li><li>
+<p>Handle ^L properly. [jduck]</p>
+</li><li>
+<p>Instance variable/typos cleanup. [jduck]</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-0.2.2+%2F+2010-10-19">0.2.2 / 2010-10-19<span><a href="#label-0.2.2+%2F+2010-10-19">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<ul><li>
+<p>Enhancements:</p>
+<ul><li>
+<p>Implemented missing _rl_input_available. [Spakman]</p>
+</li><li>
+<p>Made code look more Ruby than C. [Spakman]</p>
+</li></ul>
+</li><li>
+<p>Bugfixes:</p>
+<ul><li>
+<p>Fix bugs in the reverse search. Closes GH-14. [Spakman]</p>
+</li><li>
+<p>Do not eval inputrc defitions. Closes GH-17</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-0.2.1+%2F+2010-08-22">0.2.1 / 2010-08-22<span><a href="#label-0.2.1+%2F+2010-08-22">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<ul><li>
+<p>Bugfixes:</p>
+<ul><li>
+<p>Use stdcall as default calling convention under Ruby 1.9 [GH-15]</p>
+</li><li>
+<p>Fix TERM under Windows</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-0.2.0">0.2.0<span><a href="#label-0.2.0">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<ul><li>
+<p>Bugfixes:</p>
+<ul><li>
+<p>Accept &#39;cygwin&#39; as valid terminal [rogerdpack]</p>
+</li><li>
+<p>Accept &#39;dumb&#39; as valid terminal. Closes GH-7</p>
+</li><li>
+<p>Fix crash when performing reverse look search. Closes GH-6</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-0.1.2+%2F+2009-05-18">0.1.2 / 2009-05-18<span><a href="#label-0.1.2+%2F+2009-05-18">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

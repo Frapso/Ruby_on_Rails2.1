@@ -1,0 +1,18 @@
+C:/Ruby2.1/Ruby2.1.0/bin/ruby.exe extconf.rb
+checking for labs() in stdlib.h... yes
+checking for llabs() in stdlib.h... yes
+checking for struct RRational in ruby.h... yes
+checking for rb_rational_num() in ruby.h... no
+checking for rb_rational_den() in ruby.h... no
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+generating bigdecimal-i386-mingw32.def
+compiling bigdecimal.c
+linking shared-object bigdecimal.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bigdecimal.so ./.gem.20150319-1376-mxgeqm
+installing default bigdecimal libraries
